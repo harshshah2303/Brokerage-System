@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>MY ORDERS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body style="background-color: buttonface">
+        <h:form style="margin-left: 35px;margin-top: 40px;">
+            
+            <div><h2>Your Recent Orders</h2></div>
+            <div>
+                <h:dataTable value="#{myorder.myorder()}" var="orders" border="1">
+                    <h:column>
+                        <f:facet name="header">Stock_Name</f:facet>
+                        #{orders.stock_name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Total_Shares</f:facet>
+                        #{orders.total_shares}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Price</f:facet>
+                        #{orders.price}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Type</f:facet>
+                        #{orders.type}
+                    </h:column>
+                </h:dataTable>
+            </div>
+            <p>
+                <h:commandButton id="return1" value="Return" action="welcome.xhtml" style="background-color: black; color: white"/>
+            </p>
+        </h:form>
+    </h:body>
+</html>

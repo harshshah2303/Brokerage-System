@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Registration for a new user</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body style="background-color: buttonface">
+        <h:form style="margin-left: 35px;margin-top: 40px;">
+            <div style="float: left">
+                <h3>Create Your new Brokerage Account</h3>
+                <h:graphicImage value="createacc.jpg"/>
+            </div>
+            <div style="float: left;margin-left: 20px;">
+                <p>
+                    Please enter your User_ID:<br></br>
+                        <h:inputText id="id" required="true"
+                            requiredMessage="The ID field cannot be empty"
+                            title="Please enter your ID"
+                            value ="#{registration.id}"
+                            validatorMessage="The length of your ID should be between 3 and 10">
+                            <f:validateLength maximum="10" minimum="3"/>
+                        </h:inputText>
+                </p>
+                <p>
+                    Please enter your Social Security Number:<br></br>
+                        <h:inputText id="ssn" required="true"
+                            requiredMessage="The SSN field cannot be empty"
+                            title="Please enter your SSN"
+                            value ="#{registration.ssn}"
+                            validatorMessage="The length of your SSN should be 6 numbers long">
+                            <f:validateLength maximum="6" minimum="6"/>
+                        </h:inputText>
+                </p>
+                <p>
+                    Please enter your Full Name:<br></br>
+                        <h:inputText id="name" required="true"
+                            requiredMessage="The Name field cannot be empty"
+                            title="Please enter your Full Name"
+                            value ="#{registration.name}"
+                            validatorMessage="The length of your Name should be between 5 and 50">
+                            <f:validateLength maximum="50" minimum="5"/>
+                        </h:inputText>
+                </p>
+                <p>
+                    Please enter the amount of balance you would like to add?(Optional):<br></br>
+                        <h:inputText id="bal" required="true"
+                            requiredMessage="The balance field cannot be empty"
+                            title="Please enter your Balance"
+                            value ="#{registration.balance}">
+                            <f:convertNumber integerOnly="true"/>
+                        </h:inputText>
+                </p>
+                <p>
+                    Please enter your Password:<br></br>
+                    <h:inputSecret id="pass" required="true"
+                            requiredMessage="The password field cannot be empty"
+                            title="Please enter your Password"
+                            value ="#{registration.password}"
+                            validatorMessage="The length of your password should be between 5 and 10">
+                            <f:validateLength maximum="10" minimum="5"/>
+                        </h:inputSecret>
+                </p>
+                <p>
+                    Security Question 1: <br></br>
+                    <h:selectOneMenu value="#{registration.security_Q_1}" required="true"
+                                     requiredMessage="The security Question field cannot be empty">
+                        <f:selectItem itemValue="Favorite Color" itemLabel="Favorite Color"/>
+                        <f:selectItem itemValue="Favorite Sports_Team" itemLabel="Favorite Sports_Team"/>
+                        <f:selectItem itemValue="Your mothers maiden name" itemLabel="Your mothers maiden name"/>
+                        <f:selectItem itemValue="Best Friends Name" itemLabel="Best Friends Name"/>
+                        <f:selectItem itemValue="Favorite Sport" itemLabel="Favorite Game"/>
+                        <f:selectItem itemValue="First Pets Name" itemLabel="First Pets Name"/>
+                    </h:selectOneMenu>
+                    
+                </p>
+                <p>
+                    Your Answer For Security Question 1 : <br></br>
+                    <h:inputText id="ques1" required="true"
+                                 requiredMessage="The answer one field cannot be empty"
+                                 value ="#{registration.answer1}"
+                                 validatorMessage="The answer length should be between 3 to 15 characters">
+                        <f:validateLength maximum="15" minimum="3"/>
+                    </h:inputText>
+                </p>
+                <p>
+                    Security Question 2: <br></br>
+                    <h:selectOneMenu value="#{registration.security_Q_2}" required="true"
+                                     requiredMessage="The security Question field cannot be empty">
+                        <f:selectItem itemValue="Favorite Color" itemLabel="Favorite Color"/>
+                        <f:selectItem itemValue="Favorite Sports_Team" itemLabel="Favorite Sports_Team"/>
+                        <f:selectItem itemValue="Your mothers maiden name" itemLabel="Your mothers maiden name"/>
+                        <f:selectItem itemValue="Best Friends Name" itemLabel="Best Friends Name"/>
+                        <f:selectItem itemValue="Favorite Sport" itemLabel="Favorite Game"/>
+                        <f:selectItem itemValue="First Pets Name" itemLabel="First Pets Name"/>
+                    </h:selectOneMenu>
+                    
+                </p>
+                <p>
+                    Your Answer For Security Question 2 : <br></br>
+                    <h:inputText id="ques2" required="true"
+                                 requiredMessage="The answer one field cannot be empty"
+                                 value ="#{registration.answer2}"
+                                 validatorMessage="The answer length should be between 3 to 15 characters">
+                        <f:validateLength maximum="15" minimum="3"/>
+                    </h:inputText>
+                </p>
+                <p>
+                    <h:commandButton id="submit" value="Submit" action="confirm1.xhtml" style="background-color: black; color: white"/>
+                </p>
+            </div>
+            
+            
+            
+        </h:form>
+    </h:body>
+</html>

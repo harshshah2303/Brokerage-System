@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>BUY</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body style="background-color: buttonface">
+        <h:form style="margin-left: 35px;margin-top: 40px;">
+            <div style="float: left;">
+               <h:graphicImage value="buy.jpeg"/>
+            </div>
+            <div style="float: left;margin-left: 20px;">
+                <p>
+                    Enter the stock you want to Buy:<br></br>
+                    <h:inputText id="stock_name" value="#{trade.bname}" required="true" requiredMessage="The stock name field cannot be null"/>
+                </p>
+                <p>
+                     Enter how many stocks you want to Buy:<br></br>
+                     <h:inputText id="stock_qty" value="#{trade.bquantity}" required="true" requiredMessage="The stock quantity field cannot be null"/>
+                </p>
+                <p>
+                     Enter the price of the stock you want to Buy:<br></br>
+                     <h:inputText id="stock_price" value="#{trade.bprice}" required="true" requiredMessage="The stock price field cannot be null"/>
+                </p>
+                <p>
+                    <h:commandButton id="buy" value="Buy" action="#{trade.buy()}" style="background-color: black; color: white"/>
+                </p>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>

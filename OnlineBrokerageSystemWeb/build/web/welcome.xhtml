@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>Welcome</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body style="background-color: buttonface">
+        <h:form>
+            <br></br>
+            <center>
+                <h1>Welcome, #{login.id} to your Brokerage System</h1>
+                <br></br>
+                <h:graphicImage value="welcome.jpg"/>
+                <h2>Please make your selection</h2>
+                
+                    <h:link outcome="trade.xhtml">
+                        Trade
+                    </h:link>
+                <br></br>
+                <br></br>
+                    <h:link outcome="myorder.xhtml">
+                        My Orders
+                    </h:link>
+                <br></br>
+                <br></br>
+                    <h:link outcome="index.xhtml">
+                        Sign Out
+                    </h:link>
+            </center>
+        </h:form>
+    </h:body>
+</html>

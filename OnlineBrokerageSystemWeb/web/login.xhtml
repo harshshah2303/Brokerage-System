@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+    </h:head>
+    <h:body style="background-color: buttonface">
+        <h:form style="margin-left: 35px;margin-top: 40px;">
+            <div style="float: left;">
+                <h3>Login to your online Brokerage System</h3>
+                <h:graphicImage value="login.png"/>
+            </div>
+            <div style="float: left;margin-left: 20px;">
+                <p>
+                    Please enter your User_ID:<br></br>
+                    <h:inputText id="id" value="#{login.id}" required="true" requiredMessage="The login ID field cannot be null"/>
+                </p>
+
+                <p>
+                    Please enter your password:<br></br>
+                    <h:inputSecret id="password" value="#{login.password}" required="true" requiredMessage="The password field cannot be null"/>
+                </p>
+
+                <p>
+                    <h:commandButton id="submit" value="Submit" action="#{login.login()}" style="background-color: black; color: white"/>
+                </p>
+            </div>
+        </h:form>
+         
+        
+    </h:body>
+</html>
